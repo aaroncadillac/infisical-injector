@@ -1,5 +1,8 @@
 name: 'Infisical Getter Action'
 description: 'Build a custom env file from Infisical values with replacements'
+branding:
+  icon: 'box'
+  color: 'blue'
 inputs:
   infisical_client_id:
     description: 'Infisical Client Id'
