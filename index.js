@@ -27,7 +27,7 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
 
   console.log('Getting secrets from Infisical')
 
-  envMap = await envMap.map( async varObject => {
+  envMap = await Promise.all(envMap.map( async varObject => {
     const envValue = await infisicalClient.getSecret({
       environment: env,
       projectId,
@@ -39,7 +39,7 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
     varObject['value'] = envValue.secretValue;
     console.log('Variable object: ', varObject)
     return varObject;
-  })
+  }))
 
   console.log('Env vars with values: ', envMap)
   return envMap;
