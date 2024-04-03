@@ -37,6 +37,7 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
     });
 
     varObject['value'] = envValue.secretValue;
+    console.log('Variable object: ', varObject)
     return varObject;
   })
 
