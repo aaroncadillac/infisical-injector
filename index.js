@@ -25,6 +25,8 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
     siteUrl
   });
 
+  console.log('Getting secrets from Infisical')
+
   await envMap.forEach( async varObject => {
     const envValue = await infisicalClient.getSecret({
       environment: env,
@@ -34,9 +36,7 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
       secretName: splittedPath.length > 1 ? splittedPath[1] : splittedPath[0]
     });
 
-    console.log(`Env var value: ${JSON.stringify(envValue)}`)
-
-    varObject.value = envValue;
+    varObject.value = envValue.secretValue;
   })
 
   return envMap;
@@ -47,6 +47,9 @@ function replaceVarsInFile(envMap, filename, fileOutputPath) {
   envMap.forEach((envVar) => {
     fileContent = fileContent.replace(envVar.name, envVar.value);
   });
+
+  console.log('Writing file with replaced vars')
+
   fs.writeFileSync(fileOutputPath, fileContent);
 }
 
