@@ -9,7 +9,7 @@ This script facilitates the retrieval of variables from Infisical, whether it's 
 ## Considerations
 1. **Setup Infisical Client Credentials**:
    - Obtain the client ID and client secret from Infisical, more information can be found [here](https://infisical.com/docs/documentation/platform/identities/universal-auth).
-   - Set up the Infisical API URL. By default, `https://api.infisical.com`.
+   - Set up the Infisical API URL. By default, `https://app.infisical.com`.
 
 2. **Prepare Mapping File**:
    - Create a file specifying the variables to search for and their associated names, for example
@@ -27,7 +27,7 @@ This script facilitates the retrieval of variables from Infisical, whether it's 
 
 ```yaml
     - name: Getting variables from Infisical
-      uses: aaroncadillac/infisical-injector@v1.0
+      uses: aaroncadillac/infisical-injector@v1.2.0
       with:
         env_file_path: .pre_env
         infisical_client_id: YOUR_INFISICAL_CLIENT_ID
