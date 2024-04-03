@@ -34,7 +34,7 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
       secretName: splittedPath.length > 1 ? splittedPath[1] : splittedPath[0]
     });
 
-    console.log(`Env var value: ${envValue}`)
+    console.log(`Env var value: ${JSON.stringify(envValue)}`)
 
     varObject.value = envValue;
   })
