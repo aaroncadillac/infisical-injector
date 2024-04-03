@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21'
+
+      - name: Clean and install node modules
+        run: |
+          rm -rf node_modules
+          yarn install
+          
+      - name: Push node modules
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Updating node modules
+          branch: master
+          
+        
