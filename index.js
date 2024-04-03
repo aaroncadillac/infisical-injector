@@ -4,10 +4,9 @@ const fs = require('fs');
 
 function getVarsPathFromFile(filename) {
   const envFile = fs.readFileSync(filename, 'utf8');
-  const envMap = {};
   const envVarPaths = envFile.match(/\$\{([^\}]+)\}/g);
   
-  envVarPaths.map((envVarEscape) => ({
+  const envMap = envVarPaths.map((envVarEscape) => ({
     name: envVarEscape,
     path: /[^\$\{\}]+/.exec(envVarEscape).toString()
   }));
