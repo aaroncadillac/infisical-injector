@@ -27,7 +27,7 @@ This script facilitates the retrieval of variables from Infisical, whether it's 
 
 ```yaml
     - name: Getting variables from Infisical
-      uses: infisical/infisical-variable-injector@main
+      uses: aaroncadillac/infisical-injector@v1.0
       with:
         env_file_path: .pre_env
         infisical_client_id: YOUR_INFISICAL_CLIENT_ID
