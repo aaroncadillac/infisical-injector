@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const { InfisicalClient } = require('@infisical/sdk');
+const { InfisicalClient, LogLevel } = require('@infisical/sdk');
 const fs = require('fs');
 
 function getVarsPathFromFile(filename) {
