@@ -55,14 +55,6 @@ async function main() {
     const env = core.getInput('infisical_env');
     const projectId = core.getInput('infisical_project_id');
     const outputEnvFile = core.getInput('infisical_env_file');
-
-    console.log(envFilePath)
-    console.log(clientId)
-    console.log(clientSecret)
-    console.log(apiURL)
-    console.log(env)
-    console.log(projectId)
-    console.log(outputEnvFile)
   
     let envMap = getVarsPathFromFile(envFilePath);
     envMap = await getSecretsFromInfisical(envMap, clientId, clientSecret, env, projectId, apiURL);
