@@ -11,6 +11,8 @@ function getVarsPathFromFile(filename) {
     path: /[^\$\{\}]+/.exec(envVarEscape).toString()
   }));
 
+  console.log('Env vars paths: ', envMap)
+
   return envMap;
 }
 
@@ -31,6 +33,8 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
       type: "shared",
       secretName: splittedPath.length > 1 ? splittedPath[1] : splittedPath[0]
     });
+
+    console.log(`Env var value: ${envValue}`)
 
     varObject.value = envValue;
   })
