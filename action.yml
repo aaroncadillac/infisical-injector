@@ -1,4 +1,4 @@
-name: 'Infisical Getter Action'
+name: 'Infisical Injector'
 description: 'Build a custom env file from Infisical values with replacements'
 branding:
   icon: 'box'
