@@ -10,7 +10,7 @@ inputs:
   infisical_api_url:
     description: 'Infisical Custom URL'
     required: false
-    default: 'https://api.infisical.com'
+    default: 'https://app.infisical.com'
   infisical_env_file:
     description: 'Infisical Env File'
     required: false
