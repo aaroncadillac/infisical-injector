@@ -16,6 +16,10 @@ function getVarsPathFromFile(filename) {
 }
 
 async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, projectId, siteUrl) {
+  console.log('Setting up Infisical client')
+  console.log(InfisicalClient)
+  console.log(LogLevel)
+  
   const infisicalClient = new InfisicalClient({
     clientId,
     clientSecret,
