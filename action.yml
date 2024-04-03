@@ -1,0 +1,29 @@
+name: 'Infisical Getter Action'
+description: 'Build a custom env file from Infisical values with replacements'
+inputs:
+  infisical_client_id:
+    description: 'Infisical Client Id'
+    required: true
+  infisical_client_secret:
+    description: 'Infisical Client Secret'
+    required: true
+  infisical_api_url:
+    description: 'Infisical Custom URL'
+    required: false
+    default: 'https://api.infisical.com'
+  infisical_env_file:
+    description: 'Infisical Env File'
+    required: false
+    default: '.env'
+  infisical_env:
+    description: 'Infisical Env'
+    required: true
+  infisical_project_id:
+    description: 'Infisical Project Id'
+    required: true
+  env_file_path:
+    description: 'Env File Path'
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
