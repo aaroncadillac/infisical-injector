@@ -37,11 +37,9 @@ async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, proj
     });
 
     varObject['value'] = envValue.secretValue;
-    console.log('Variable object: ', varObject)
     return varObject;
   }))
 
-  console.log('Env vars with values: ', envMap)
   return envMap;
 }
 
@@ -68,7 +66,6 @@ async function main() {
   
     let envMap = getVarsPathFromFile(envFilePath);
     envMap = await getSecretsFromInfisical(envMap, clientId, clientSecret, env, projectId, apiURL);
-    console.log('Env vars with values, on main function: ', envMap)
     replaceVarsInFile(envMap, envFilePath, outputEnvFile);
 
   } catch (error) {
