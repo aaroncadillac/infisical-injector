@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const { InfisicalClient, LogLevel } = require('@infisical/sdk');
+const { InfisicalClient } = require('@infisical/sdk');
 const fs = require('fs');
 
 function getVarsPathFromFile(filename) {
@@ -17,13 +17,10 @@ function getVarsPathFromFile(filename) {
 
 async function getSecretsFromInfisical(envMap, clientId, clientSecret, env, projectId, siteUrl) {
   console.log('Setting up Infisical client')
-  console.log(InfisicalClient)
-  console.log(LogLevel)
-  
+
   const infisicalClient = new InfisicalClient({
     clientId,
     clientSecret,
-    logLevel: LogLevel.Error,
     siteUrl,
   });
 
