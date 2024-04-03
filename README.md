@@ -45,7 +45,7 @@ This script facilitates the retrieval of variables from Infisical, whether it's 
 | `env_file_path` | Path to the mapping file | true | - |
 | `infisical_client_id` | Infisical client ID | true | - |
 | `infisical_client_secret` | Infisical client secret | true | - |
-| `infisical_api_url` | Infisical API URL | false | `https://api.infisical.com` |
+| `infisical_api_url` | Infisical API URL | false | `https://app.infisical.com` |
 | `infisical_project_id` | Infisical project ID | true | - |
 | `infisical_env` | Infisical environment | true | - |
 | `infisical_env_file` | Path to the file where the variables will be replaced | false | `.env` |
